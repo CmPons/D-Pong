@@ -1,0 +1,1417 @@
+[
+{
+"name" : "Actor",
+"kind" : "module",
+"file" : "PActor.d",
+"members" : [
+{
+"name" : "PActor",
+"kind" : "class",
+"protection" : "public",
+"line" : 13,
+"base" : "Object",
+"members" : [
+{
+"name" : "position",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PVector",
+"line" : 15}
+,
+{
+"name" : "resolution",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PVector",
+"line" : 16}
+,
+{
+"name" : "moveSpeed",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PVector",
+"line" : 18}
+,
+{
+"name" : "actorTextureXSize",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 20}
+,
+{
+"name" : "actorTextureYSize",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 21}
+,
+{
+"name" : "ballMoveSpeedCap",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 22}
+,
+{
+"name" : "movingUp",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 24}
+,
+{
+"name" : "movingDown",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 24}
+,
+{
+"name" : "notMoving",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 24}
+,
+{
+"name" : "horizontalCollision",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 26}
+,
+{
+"name" : "verticleCollision",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 26}
+,
+{
+"name" : "actorList",
+"kind" : "variable",
+"protection" : "public",
+"type" : "PActor[]",
+"line" : 29}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PActor()",
+"line" : 31}
+,
+{
+"name" : "Init",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 59}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 60}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PVector moveTo)",
+"line" : 61}
+,
+{
+"name" : "CheckScreenCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 62}
+,
+{
+"name" : "CheckCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PActor object1, PActor object2, PInput pinput)",
+"line" : 64}
+,
+{
+"name" : "CheckObjectCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(PActor object1, PActor object2)",
+"line" : 72}
+,
+{
+"name" : "AdjustMoveSpeed",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PActor object1, PActor object2, PInput pinput)",
+"line" : 97}
+,
+{
+"name" : "ProcessBallPlayerCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PActor ball, PVector prevMouseLocation, PVector currMouseLocation)",
+"line" : 141}
+,
+{
+"name" : "ProcessBallBotCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PActor bot, PActor ball)",
+"line" : 168}
+,
+{
+"name" : "CheckCurrentMoveSpeed",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(int currentMoveSpeed, int nextMoveSpeed)",
+"line" : 227}
+,
+{
+"name" : "GetPosition",
+"kind" : "function",
+"protection" : "public",
+"type" : "PVector()",
+"line" : 240}
+,
+{
+"name" : "AddToList",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PActor actorToAdd)",
+"line" : 245}
+]
+}
+,
+{
+"name" : "PPlayer",
+"kind" : "class",
+"protection" : "public",
+"line" : 251,
+"base" : "PActor",
+"members" : [
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PPlayer()",
+"line" : 255}
+,
+{
+"name" : "Init",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 269}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 273}
+,
+{
+"name" : "MouseMove",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PInput pinput)",
+"line" : 278}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PVector vector)",
+"line" : 285}
+,
+{
+"name" : "CheckScreenCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 289}
+,
+{
+"name" : "ResetPaddlePosition",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 305}
+]
+}
+,
+{
+"name" : "PBall",
+"kind" : "class",
+"protection" : "public",
+"line" : 312,
+"base" : "PActor",
+"members" : [
+{
+"name" : "ballReset",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 315}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PBall()",
+"line" : 317}
+,
+{
+"name" : "Init",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 326}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 330}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PVector vector)",
+"line" : 337}
+,
+{
+"name" : "GetMoveSpeed",
+"kind" : "function",
+"protection" : "public",
+"type" : "PVector()",
+"line" : 341}
+,
+{
+"name" : "CheckScreenCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 345}
+,
+{
+"name" : "DidPlayerScore",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 362}
+,
+{
+"name" : "DidBotScore",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 370}
+,
+{
+"name" : "ResetBall",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 378}
+,
+{
+"name" : "ResetBallSpeed",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 387}
+,
+{
+"name" : "IsBallReset",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 394}
+]
+}
+,
+{
+"name" : "PBot",
+"kind" : "class",
+"protection" : "public",
+"line" : 400,
+"base" : "PActor",
+"members" : [
+{
+"name" : "botHardMode",
+"kind" : "variable",
+"protection" : "public",
+"type" : "bool",
+"line" : 402}
+,
+{
+"name" : "botEasyMode",
+"kind" : "variable",
+"protection" : "public",
+"type" : "bool",
+"line" : 403}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PBot()",
+"line" : 405}
+,
+{
+"name" : "Init",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 414}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PVector vector)",
+"line" : 418}
+,
+{
+"name" : "AdjustBotDifficulty",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(int botScore, int playerScore)",
+"line" : 422}
+,
+{
+"name" : "ResetMoveSpeed",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 464}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PBall ball)",
+"line" : 469}
+,
+{
+"name" : "CompareAndMove",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(int moveSpeed, int ballMiddle, int botMiddle)",
+"line" : 497}
+,
+{
+"name" : "Move",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 505}
+,
+{
+"name" : "CheckScreenCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 509}
+,
+{
+"name" : "ResetPaddlePosition",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 525}
+]
+}
+]
+}
+,
+{
+"kind" : "module",
+"file" : "PApp.d",
+"members" : [
+{
+"name" : "PApp",
+"kind" : "class",
+"protection" : "public",
+"line" : 11,
+"base" : "Object",
+"members" : [
+{
+"name" : "gameRunning",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 13}
+,
+{
+"name" : "event",
+"kind" : "variable",
+"protection" : "private",
+"type" : "SDL_Event",
+"line" : 14}
+,
+{
+"name" : "ptime",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PTime.PTime",
+"line" : 16}
+,
+{
+"name" : "pfps",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PFps.PFps",
+"line" : 17}
+,
+{
+"name" : "pinput",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PInput.PInput",
+"line" : 18}
+,
+{
+"name" : "title",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 20}
+,
+{
+"name" : "pressAnyKey",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 21}
+,
+{
+"name" : "escToExit",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 22}
+,
+{
+"name" : "playerScoreText",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 23}
+,
+{
+"name" : "botScoreText",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 24}
+,
+{
+"name" : "youWin",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 25}
+,
+{
+"name" : "youLose",
+"kind" : "variable",
+"protection" : "private",
+"type" : "TextObject.PText",
+"line" : 26}
+,
+{
+"name" : "playStateManager",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PlayStateManager.PlayStateManager",
+"line" : 28}
+,
+{
+"name" : "player",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Actor.PPlayer",
+"line" : 30}
+,
+{
+"name" : "ballActor",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Actor.PBall",
+"line" : 31}
+,
+{
+"name" : "bot",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Actor.PBot",
+"line" : 32}
+,
+{
+"name" : "ball",
+"kind" : "variable",
+"protection" : "private",
+"type" : "drawableObject.PDrawableObject",
+"line" : 34}
+,
+{
+"name" : "playerPaddle",
+"kind" : "variable",
+"protection" : "private",
+"type" : "drawableObject.PDrawableObject",
+"line" : 35}
+,
+{
+"name" : "background",
+"kind" : "variable",
+"protection" : "private",
+"type" : "drawableObject.PDrawableObject",
+"line" : 36}
+,
+{
+"name" : "botPaddle",
+"kind" : "variable",
+"protection" : "private",
+"type" : "drawableObject.PDrawableObject",
+"line" : 37}
+,
+{
+"name" : "xResolution",
+"kind" : "variable",
+"protection" : "private",
+"type" : "const(int)",
+"line" : 39}
+,
+{
+"name" : "yResolution",
+"kind" : "variable",
+"protection" : "private",
+"type" : "const(int)",
+"line" : 40}
+,
+{
+"name" : "bitsPerPixel",
+"kind" : "variable",
+"protection" : "private",
+"type" : "const(int)",
+"line" : 41}
+,
+{
+"name" : "GameState",
+"kind" : "enum",
+"protection" : "public",
+"line" : 44,
+"base" : "int",
+"members" : [
+{
+"name" : "GS_TitleScreen",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 45}
+,
+{
+"name" : "GS_PlayScreen",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 46}
+,
+{
+"name" : "GS_PlayerWonScreen",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 47}
+,
+{
+"name" : "GS_BotWonScreen",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 48}
+]
+}
+,
+{
+"name" : "currentGameState",
+"kind" : "variable",
+"protection" : "private",
+"type" : "GameState",
+"line" : 51}
+,
+{
+"name" : "surfDisplay",
+"kind" : "variable",
+"protection" : "public",
+"type" : "SDL_Surface*",
+"line" : 54}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PApp()",
+"line" : 55}
+,
+{
+"name" : "Run",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 92}
+,
+{
+"name" : "Init",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 104}
+,
+{
+"name" : "InitSubSystems",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 119}
+,
+{
+"name" : "InitLists",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 138}
+,
+{
+"name" : "InitTime",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 153}
+,
+{
+"name" : "InitActors",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 159}
+,
+{
+"name" : "InitDrawPositions",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 165}
+,
+{
+"name" : "Load",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 172}
+,
+{
+"name" : "Loop",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 191}
+,
+{
+"name" : "UpdateGame",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 240}
+,
+{
+"name" : "UpdateScores",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 262}
+,
+{
+"name" : "CheckPlayAgain",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 306}
+,
+{
+"name" : "UpdateBall",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 338}
+,
+{
+"name" : "UpdateBot",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 352}
+,
+{
+"name" : "CheckActorCollision",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 362}
+,
+{
+"name" : "Render",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 369}
+,
+{
+"name" : "Cleanup",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 402}
+,
+{
+"name" : "GetResolution",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(out PVector resolution)",
+"line" : 419}
+]
+}
+,
+{
+"name" : "main",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 426}
+]
+}
+,
+{
+"name" : "drawableObject",
+"kind" : "module",
+"file" : "PDrawableObject.d",
+"members" : [
+{
+"name" : "PDrawableObject",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Object",
+"members" : [
+{
+"name" : "objectSurface",
+"kind" : "variable",
+"protection" : "private",
+"type" : "SDL_Surface*",
+"line" : 11}
+,
+{
+"name" : "filename",
+"kind" : "variable",
+"protection" : "private",
+"type" : "const(immutable(char)[])",
+"line" : 12}
+,
+{
+"name" : "xPosition",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 14}
+,
+{
+"name" : "yPosition",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 15}
+,
+{
+"name" : "LoadFile",
+"kind" : "function",
+"protection" : "private",
+"type" : "SDL_Surface*()",
+"line" : 17}
+,
+{
+"name" : "objectList",
+"kind" : "variable",
+"protection" : "public",
+"type" : "PDrawableObject[]",
+"line" : 33}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PDrawableObject(const(immutable(char)[]) filename)",
+"line" : 35}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PDrawableObject(const(immutable(char)[]) filename, PVector position)",
+"line" : 43}
+,
+{
+"name" : "Load",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 56}
+,
+{
+"name" : "Draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(SDL_Surface* Destination)",
+"line" : 64}
+,
+{
+"name" : "Cleanup",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 83}
+,
+{
+"name" : "SetPosition",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(int xPosition, int yPosition)",
+"line" : 88}
+,
+{
+"name" : "SetPosition",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PVector position)",
+"line" : 94}
+,
+{
+"name" : "AddToList",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PDrawableObject dObject)",
+"line" : 100}
+]
+}
+]
+}
+,
+{
+"name" : "TextObject",
+"kind" : "module",
+"file" : "PDrawText.d",
+"members" : [
+{
+"name" : "PText",
+"kind" : "class",
+"protection" : "public",
+"line" : 8,
+"base" : "Object",
+"members" : [
+{
+"name" : "message",
+"kind" : "variable",
+"protection" : "private",
+"type" : "SDL_Surface*",
+"line" : 10}
+,
+{
+"name" : "font",
+"kind" : "variable",
+"protection" : "private",
+"type" : "_TTF_Font*",
+"line" : 11}
+,
+{
+"name" : "xPosition",
+"kind" : "variable",
+"protection" : "private",
+"type" : "short",
+"line" : 12}
+,
+{
+"name" : "yPosition",
+"kind" : "variable",
+"protection" : "private",
+"type" : "short",
+"line" : 13}
+,
+{
+"name" : "messageText",
+"kind" : "variable",
+"protection" : "private",
+"type" : "string",
+"line" : 14}
+,
+{
+"name" : "fontFileLocation",
+"kind" : "variable",
+"protection" : "private",
+"type" : "string",
+"line" : 15}
+,
+{
+"name" : "fontSize",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 16}
+,
+{
+"name" : "textColor",
+"kind" : "variable",
+"protection" : "private",
+"type" : "SDL_Color",
+"line" : 18}
+,
+{
+"name" : "textList",
+"kind" : "variable",
+"protection" : "public",
+"type" : "PText[]",
+"line" : 22}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PText(string messageText, string fontFileLocation, int fontSize, short xPosition, short yPosition)",
+"line" : 24}
+,
+{
+"name" : "Load",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 43}
+,
+{
+"name" : "UpdateMessageText",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(string messageText)",
+"line" : 58}
+,
+{
+"name" : "Draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(SDL_Surface* Destination)",
+"line" : 64}
+,
+{
+"name" : "Cleanup",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 79}
+,
+{
+"name" : "AddToList",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PText ptext)",
+"line" : 85}
+]
+}
+]
+}
+,
+{
+"kind" : "module",
+"file" : "PFps.d",
+"members" : [
+{
+"name" : "PFps",
+"kind" : "class",
+"protection" : "public",
+"line" : 5,
+"base" : "Object",
+"members" : [
+{
+"name" : "alpha",
+"kind" : "variable",
+"protection" : "private",
+"type" : "float",
+"line" : 7}
+,
+{
+"name" : "getTicks",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 8}
+,
+{
+"name" : "frameTimeDelta",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 8}
+,
+{
+"name" : "frameTimeLast",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 8}
+,
+{
+"name" : "frameTime",
+"kind" : "variable",
+"protection" : "private",
+"type" : "float",
+"line" : 9}
+,
+{
+"name" : "framesPerSecond",
+"kind" : "variable",
+"protection" : "private",
+"type" : "float",
+"line" : 9}
+,
+{
+"name" : "FPSInit",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 12}
+,
+{
+"name" : "FPSThink",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 22}
+,
+{
+"name" : "GetFramesPerSecond",
+"kind" : "function",
+"protection" : "public",
+"type" : "float()",
+"line" : 35}
+]
+}
+]
+}
+,
+{
+"kind" : "module",
+"file" : "PInput.d",
+"members" : [
+{
+"name" : "PInput",
+"kind" : "class",
+"protection" : "public",
+"line" : 6,
+"base" : "Object",
+"members" : [
+{
+"name" : "prevMouseLocation",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PVector",
+"line" : 8}
+,
+{
+"name" : "currMouseLocation",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PVector",
+"line" : 9}
+,
+{
+"name" : "IsKeyDown",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(ref SDL_Event event)",
+"line" : 11}
+,
+{
+"name" : "IsKeyReleased",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(ref SDL_Event event)",
+"line" : 16}
+,
+{
+"name" : "KeyPressed",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(ref SDL_Event event, int Key)",
+"line" : 21}
+,
+{
+"name" : "MouseCoordinates",
+"kind" : "function",
+"protection" : "public",
+"type" : "PVector(PVector location)",
+"line" : 26}
+,
+{
+"name" : "UpdateMouseLocation",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 32}
+,
+{
+"name" : "GetPrevMouseLocation",
+"kind" : "function",
+"protection" : "public",
+"type" : "PVector()",
+"line" : 39}
+,
+{
+"name" : "GetCurrMouseLocation",
+"kind" : "function",
+"protection" : "public",
+"type" : "PVector()",
+"line" : 44}
+]
+}
+]
+}
+,
+{
+"kind" : "module",
+"file" : "PlayStateManager.d",
+"members" : [
+{
+"name" : "PlayStateManager",
+"kind" : "class",
+"protection" : "public",
+"line" : 5,
+"base" : "Object",
+"members" : [
+{
+"name" : "playerScore",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 7}
+,
+{
+"name" : "botScore",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 8}
+,
+{
+"name" : "maxScore",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 9}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PlayStateManager()",
+"line" : 11}
+,
+{
+"name" : "DidPlayerWin",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 18}
+,
+{
+"name" : "DidBotWin",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 26}
+,
+{
+"name" : "PlayerScored",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 34}
+,
+{
+"name" : "BotScored",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 39}
+,
+{
+"name" : "ReturnScores",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(out int playerScore, out int botScore)",
+"line" : 44}
+,
+{
+"name" : "ResetScore",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 50}
+]
+}
+]
+}
+,
+{
+"kind" : "module",
+"file" : "PTime.d",
+"members" : [
+{
+"name" : "PTime",
+"kind" : "class",
+"protection" : "public",
+"line" : 4,
+"base" : "Object",
+"members" : [
+{
+"name" : "TICKINTERVAL",
+"kind" : "variable",
+"protection" : "private",
+"type" : "const(int)",
+"line" : 6}
+,
+{
+"name" : "nextTime",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 7}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PTime()",
+"line" : 10}
+,
+{
+"name" : "GetTicks",
+"kind" : "function",
+"protection" : "public",
+"type" : "int()",
+"line" : 16}
+,
+{
+"name" : "TimeLeft",
+"kind" : "function",
+"protection" : "public",
+"type" : "int()",
+"line" : 21}
+,
+{
+"name" : "PDelay",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(int timeLeft)",
+"line" : 33}
+,
+{
+"name" : "InitNextTime",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 38}
+,
+{
+"name" : "UpdateNextTime",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 43}
+]
+}
+]
+}
+,
+{
+"kind" : "module",
+"file" : "PUtil.d",
+"members" : [
+{
+"name" : "PVector",
+"kind" : "struct",
+"protection" : "public",
+"line" : 6,
+"members" : [
+{
+"name" : "x",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 7}
+,
+{
+"name" : "y",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 8}
+]
+}
+,
+{
+"name" : "PRect",
+"kind" : "struct",
+"protection" : "public",
+"line" : 12,
+"members" : [
+{
+"name" : "Top",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 13}
+,
+{
+"name" : "Bottom",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 14}
+,
+{
+"name" : "Left",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 15}
+,
+{
+"name" : "Right",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 16}
+]
+}
+,
+{
+"name" : "AbsoluteValue",
+"kind" : "function",
+"protection" : "public",
+"type" : "int(int n)",
+"line" : 20}
+]
+}
+]
